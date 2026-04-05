@@ -91,7 +91,7 @@ export default function ServiceRecommendations({ recommendation }: ServiceRecomm
       <div className="space-y-4">
         {view === "bundle"
           ? recommendation.optimalBundle.map((match, index) => (
-              <ServiceCard key={match.service.id} match={match} rank={index + 1} isBundled />
+              <ServiceCard key={match.service.id} match={match} rank={index + 1} isBundled allMatches={recommendation.rankedServices} />
             ))
           : recommendation.rankedServices.map((match, index) => (
               <ServiceCard
@@ -99,6 +99,7 @@ export default function ServiceRecommendations({ recommendation }: ServiceRecomm
                 match={match}
                 rank={index + 1}
                 isBundled={bundleIds.has(match.service.id)}
+                allMatches={recommendation.rankedServices}
               />
             ))}
       </div>
