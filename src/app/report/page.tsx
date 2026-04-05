@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useDiscovery } from "@/context/DiscoveryContext";
 import { analyzeDiscovery } from "@/lib/analysis";
+import { exportReport, downloadReportJSON } from "@/lib/report-export";
 import ReadinessGauge from "@/components/report/ReadinessGauge";
 import OpportunityCard from "@/components/report/OpportunityCard";
 import RoadmapTimeline from "@/components/report/RoadmapTimeline";
@@ -89,7 +90,15 @@ export default function ReportPage() {
 
         {/* Actions */}
         <div className="flex flex-wrap justify-center gap-4 rounded-2xl border border-kova-navy-light bg-kova-navy-mid p-6">
-          <Button onClick={() => window.print()}>Print Report</Button>
+          <Button
+            onClick={() => {
+              const report = exportReport(state, analysis);
+              downloadReportJSON(report);
+            }}
+          >
+            Download Report
+          </Button>
+          <Button variant="secondary" onClick={() => window.print()}>Print Report</Button>
           <Button variant="outline" onClick={handleStartOver}>
             Start Over
           </Button>
