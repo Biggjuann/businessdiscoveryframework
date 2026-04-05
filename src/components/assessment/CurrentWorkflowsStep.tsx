@@ -5,7 +5,7 @@ import { useDiscovery } from "@/context/DiscoveryContext";
 import StepShell from "./StepShell";
 import CheckboxGroup from "@/components/ui/CheckboxGroup";
 import Button from "@/components/ui/Button";
-import { DEPARTMENTS, CURRENT_SYSTEMS, PROCESS_FREQUENCIES, EFFORT_LEVELS } from "@/lib/constants";
+import { DEPARTMENTS, PROCESS_FREQUENCIES, EFFORT_LEVELS } from "@/lib/constants";
 import type { WorkflowInfo, Process, Department } from "@/types/discovery";
 
 export default function CurrentWorkflowsStep() {
@@ -102,12 +102,6 @@ export default function CurrentWorkflowsStep() {
         </Button>
       </div>
 
-      <CheckboxGroup
-        label="What systems and tools do you currently use?"
-        options={CURRENT_SYSTEMS.map((s) => ({ value: s, label: s }))}
-        values={form.currentTools}
-        onChange={(v) => setForm({ ...form, currentTools: v })}
-      />
     </StepShell>
   );
 }
