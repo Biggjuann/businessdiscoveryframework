@@ -43,32 +43,14 @@ export default function PlanDashboard({ initialPlan, onReset }: PlanDashboardPro
   };
 
   return (
-    <div className="min-h-screen bg-kova-navy">
-      <div className="mx-auto max-w-5xl px-4 py-8">
-        {/* Header */}
-        <div className="mb-8 rounded-2xl border border-kova-navy-light bg-kova-navy-mid p-6">
-          <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-kova-violet font-display">
-                KOVA Implementation Plan
-              </p>
-              <h1 className="mt-1 text-2xl font-bold text-white font-display">
-                {plan.clientName}
-              </h1>
-              <div className="mt-2 flex items-center gap-4 text-xs text-slate-500 font-mono">
-                <span>Industry: <span className="text-slate-300">{plan.industry.replace(/_/g, " ")}</span></span>
-                <span>Readiness: <span className="text-kova-teal">{plan.readinessScore}/100</span></span>
-                <span>Opportunities: <span className="text-kova-violet">{plan.opportunities.length}</span></span>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <Button size="sm" onClick={handleExportPlan}>Save Plan</Button>
-              <Button size="sm" variant="outline" onClick={onReset}>New Report</Button>
-            </div>
+    <div className="space-y-6">
+        {/* Stats bar */}
+        <div className="rounded-2xl border border-kova-navy-light bg-kova-navy-mid p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-white font-display">Task Progress</h2>
+            <Button size="sm" onClick={handleExportPlan}>Save Plan</Button>
           </div>
-
-          {/* Stats bar */}
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <div className="rounded-lg bg-kova-navy p-3 border border-kova-navy-light">
               <p className="text-xs text-slate-500">Total Tasks</p>
               <p className="text-xl font-bold text-white font-mono">{totalTasks}</p>
@@ -104,7 +86,7 @@ export default function PlanDashboard({ initialPlan, onReset }: PlanDashboardPro
 
         {/* Opportunity sections grouped by phase */}
         {quickWins.length > 0 && (
-          <div className="mb-8">
+          <div>
             <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-white font-display">
               <span className="rounded-full bg-kova-teal px-2.5 py-0.5 text-xs font-bold text-white">Phase 1</span>
               Quick Wins
@@ -127,7 +109,7 @@ export default function PlanDashboard({ initialPlan, onReset }: PlanDashboardPro
         )}
 
         {mediumTerm.length > 0 && (
-          <div className="mb-8">
+          <div>
             <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-white font-display">
               <span className="rounded-full bg-kova-gold px-2.5 py-0.5 text-xs font-bold text-white">Phase 2</span>
               Medium-Term Initiatives
@@ -150,7 +132,7 @@ export default function PlanDashboard({ initialPlan, onReset }: PlanDashboardPro
         )}
 
         {strategic.length > 0 && (
-          <div className="mb-8">
+          <div>
             <h2 className="mb-4 flex items-center gap-2 text-lg font-bold text-white font-display">
               <span className="rounded-full bg-kova-violet px-2.5 py-0.5 text-xs font-bold text-white">Phase 3</span>
               Strategic Investments
@@ -171,7 +153,6 @@ export default function PlanDashboard({ initialPlan, onReset }: PlanDashboardPro
             </div>
           </div>
         )}
-      </div>
     </div>
   );
 }
