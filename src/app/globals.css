@@ -1,18 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #0F0D1A;
-  --foreground: #FFFFFF;
+@theme inline {
+  --color-kova-violet: #8B5CF6;
+  --color-kova-violet-deep: #6D28D9;
+  --color-kova-violet-pale: #C4B5FD;
+  --color-kova-navy: #0F0D1A;
+  --color-kova-navy-mid: #1A1730;
+  --color-kova-navy-light: #242040;
+  --color-kova-gold: #F7A623;
+  --color-kova-red: #EF4444;
+  --color-kova-teal: #2DD4BF;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "DejaVu Mono", monospace;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Poppins", sans-serif;
+@layer base {
+  body {
+    background: #0F0D1A;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+  }
 }
 
 @media print {
