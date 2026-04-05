@@ -101,10 +101,8 @@ export default function ReportUploader({ onReportLoaded }: ReportUploaderProps) 
           <p className="mt-4 text-sm text-slate-400">
             Drag & drop a report JSON file here, or
           </p>
-          <label className="mt-3 inline-block">
-            <Button variant="secondary" size="sm" className="cursor-pointer" onClick={() => {}}>
-              Browse Files
-            </Button>
+          <label className="mt-3 inline-block cursor-pointer rounded-lg bg-kova-navy-light px-4 py-2 text-sm font-semibold text-white hover:bg-kova-navy-light/80 transition-colors font-display">
+            Browse Files
             <input
               type="file"
               accept=".json"
