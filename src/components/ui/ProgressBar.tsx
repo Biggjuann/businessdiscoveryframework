@@ -13,12 +13,12 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
           <div key={step} className="flex flex-1 items-center">
             <div className="flex flex-col items-center">
               <div
-                className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium transition-colors ${
+                className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium font-display transition-colors ${
                   index < currentStep
-                    ? "bg-blue-600 text-white"
+                    ? "bg-kova-violet text-white"
                     : index === currentStep
-                    ? "bg-blue-600 text-white ring-4 ring-blue-100"
-                    : "bg-slate-200 text-slate-500"
+                    ? "bg-kova-violet text-white ring-4 ring-kova-violet/20"
+                    : "bg-kova-navy-light text-slate-500"
                 }`}
               >
                 {index < currentStep ? (
@@ -31,7 +31,7 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
               </div>
               <span
                 className={`mt-2 text-xs font-medium hidden sm:block ${
-                  index <= currentStep ? "text-blue-600" : "text-slate-400"
+                  index <= currentStep ? "text-kova-violet" : "text-slate-500"
                 }`}
               >
                 {step}
@@ -40,7 +40,7 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
             {index < steps.length - 1 && (
               <div
                 className={`mx-2 h-0.5 flex-1 transition-colors ${
-                  index < currentStep ? "bg-blue-600" : "bg-slate-200"
+                  index < currentStep ? "bg-kova-violet" : "bg-kova-navy-light"
                 }`}
               />
             )}

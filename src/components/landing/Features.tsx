@@ -43,24 +43,24 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="bg-white px-4 py-20">
+    <section className="bg-kova-navy-mid px-4 py-20">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-slate-900">
+          <h2 className="text-3xl font-bold text-white font-display">
             Everything You Need to Start Your AI Journey
           </h2>
-          <p className="mt-3 text-slate-500">
+          <p className="mt-3 text-slate-400">
             Our framework guides you from discovery to action plan in one session.
           </p>
         </div>
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
-            <div key={feature.title} className="rounded-xl border border-slate-100 p-6 hover:shadow-md transition-shadow">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+            <div key={feature.title} className="rounded-xl border border-kova-navy-light bg-kova-navy p-6 hover:border-kova-violet/30 transition-colors">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-kova-violet/10 text-kova-violet">
                 {feature.icon}
               </div>
-              <h3 className="mt-4 font-semibold text-slate-900">{feature.title}</h3>
-              <p className="mt-2 text-sm text-slate-500">{feature.description}</p>
+              <h3 className="mt-4 font-semibold text-white font-display">{feature.title}</h3>
+              <p className="mt-2 text-sm text-slate-400">{feature.description}</p>
             </div>
           ))}
         </div>

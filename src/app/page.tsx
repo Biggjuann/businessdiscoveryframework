@@ -8,8 +8,8 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
-      <footer className="bg-slate-900 px-4 py-8 text-center text-sm text-slate-400">
-        <p>AI Business Discovery Framework</p>
+      <footer className="bg-kova-navy-mid border-t border-kova-navy-light px-4 py-8 text-center">
+        <p className="text-sm text-slate-500 font-display tracking-wider">KOVA · Intelligent Automation</p>
       </footer>
     </main>
   );

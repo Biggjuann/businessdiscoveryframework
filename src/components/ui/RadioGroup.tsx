@@ -17,15 +17,15 @@ interface RadioGroupProps {
 export default function RadioGroup({ label, options, value, onChange, name }: RadioGroupProps) {
   return (
     <fieldset>
-      {label && <legend className="mb-3 text-sm font-medium text-slate-700">{label}</legend>}
+      {label && <legend className="mb-3 text-sm font-medium text-kova-violet-pale">{label}</legend>}
       <div className="space-y-2">
         {options.map((option) => (
           <label
             key={option.value}
             className={`flex cursor-pointer items-start rounded-lg border p-3 transition-colors ${
               value === option.value
-                ? "border-blue-500 bg-blue-50"
-                : "border-slate-200 hover:border-slate-300"
+                ? "border-kova-violet bg-kova-violet/10"
+                : "border-kova-navy-light hover:border-kova-navy-light/80 hover:bg-kova-navy-light/50"
             }`}
           >
             <input
@@ -34,12 +34,12 @@ export default function RadioGroup({ label, options, value, onChange, name }: Ra
               value={option.value}
               checked={value === option.value}
               onChange={() => onChange(option.value)}
-              className="mt-0.5 h-4 w-4 text-blue-600 focus:ring-blue-500"
+              className="mt-0.5 h-4 w-4 border-kova-navy-light text-kova-violet focus:ring-kova-violet bg-kova-navy"
             />
             <div className="ml-3">
-              <span className="text-sm font-medium text-slate-900">{option.label}</span>
+              <span className="text-sm font-medium text-white">{option.label}</span>
               {option.description && (
-                <p className="text-xs text-slate-500 mt-0.5">{option.description}</p>
+                <p className="text-xs text-slate-400 mt-0.5">{option.description}</p>
               )}
             </div>
           </label>

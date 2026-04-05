@@ -6,7 +6,7 @@ import StepShell from "./StepShell";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import { BOTTLENECK_TEMPLATES } from "@/lib/constants";
-import type { PainPoints, Bottleneck, ManualTask } from "@/types/discovery";
+import type { PainPoints, ManualTask } from "@/types/discovery";
 
 export default function PainPointsStep() {
   const { state, dispatch } = useDiscovery();
@@ -65,7 +65,7 @@ export default function PainPointsStep() {
       canProceed={canProceed}
     >
       <div>
-        <label className="mb-3 block text-sm font-medium text-slate-700">
+        <label className="mb-3 block text-sm font-medium text-kova-violet-pale">
           Select your biggest bottlenecks and rate their severity
         </label>
         <div className="space-y-2">
@@ -75,7 +75,7 @@ export default function PainPointsStep() {
               <div
                 key={bt.id}
                 className={`rounded-lg border p-3 transition-colors ${
-                  selected ? "border-blue-500 bg-blue-50" : "border-slate-200"
+                  selected ? "border-kova-violet bg-kova-violet/10" : "border-kova-navy-light"
                 }`}
               >
                 <label className="flex cursor-pointer items-center">
@@ -83,9 +83,9 @@ export default function PainPointsStep() {
                     type="checkbox"
                     checked={!!selected}
                     onChange={() => toggleBottleneck(bt.id, bt.label)}
-                    className="h-4 w-4 rounded text-blue-600"
+                    className="h-4 w-4 rounded border-kova-navy-light text-kova-violet focus:ring-kova-violet bg-kova-navy"
                   />
-                  <span className="ml-3 text-sm text-slate-700">{bt.label}</span>
+                  <span className="ml-3 text-sm text-slate-300">{bt.label}</span>
                 </label>
                 {selected && (
                   <div className="mt-2 ml-7 flex items-center gap-2">
@@ -94,16 +94,16 @@ export default function PainPointsStep() {
                       <button
                         key={n}
                         onClick={() => updateSeverity(bt.id, n)}
-                        className={`h-7 w-7 rounded text-xs font-medium transition-colors ${
+                        className={`h-7 w-7 rounded text-xs font-medium font-mono transition-colors ${
                           selected.severity >= n
-                            ? "bg-blue-600 text-white"
-                            : "bg-slate-100 text-slate-500"
+                            ? "bg-kova-violet text-white"
+                            : "bg-kova-navy-light text-slate-500"
                         }`}
                       >
                         {n}
                       </button>
                     ))}
-                    <span className="text-xs text-slate-400 ml-1">
+                    <span className="text-xs text-slate-500 ml-1">
                       {selected.severity <= 2 ? "Low" : selected.severity === 3 ? "Medium" : "High"}
                     </span>
                   </div>
@@ -115,14 +115,14 @@ export default function PainPointsStep() {
       </div>
 
       <div>
-        <label className="mb-3 block text-sm font-medium text-slate-700">
+        <label className="mb-3 block text-sm font-medium text-kova-violet-pale">
           Manual / Repetitive Tasks
         </label>
         <div className="space-y-3">
           {form.manualTasks.map((task, index) => (
-            <div key={index} className="flex gap-2 items-center rounded-lg border border-slate-200 p-3">
+            <div key={index} className="flex gap-2 items-center rounded-lg border border-kova-navy-light bg-kova-navy p-3">
               <input
-                className="flex-1 rounded border border-slate-300 px-2 py-1.5 text-sm"
+                className="flex-1 rounded border border-kova-navy-light bg-kova-navy-mid px-2 py-1.5 text-sm text-white placeholder:text-slate-500"
                 placeholder="Task name"
                 value={task.name}
                 onChange={(e) => updateTask(index, { name: e.target.value })}
@@ -132,22 +132,22 @@ export default function PainPointsStep() {
                   type="number"
                   min={0}
                   max={168}
-                  className="w-16 rounded border border-slate-300 px-2 py-1.5 text-sm"
+                  className="w-16 rounded border border-kova-navy-light bg-kova-navy-mid px-2 py-1.5 text-sm text-white font-mono"
                   value={task.hoursPerWeek || ""}
                   onChange={(e) => updateTask(index, { hoursPerWeek: Number(e.target.value) })}
                 />
                 <span className="text-xs text-slate-500">hrs/wk</span>
               </div>
-              <label className="flex items-center gap-1 text-xs text-slate-600">
+              <label className="flex items-center gap-1 text-xs text-slate-400">
                 <input
                   type="checkbox"
                   checked={task.errorProne}
                   onChange={(e) => updateTask(index, { errorProne: e.target.checked })}
-                  className="h-3.5 w-3.5 rounded"
+                  className="h-3.5 w-3.5 rounded border-kova-navy-light text-kova-violet bg-kova-navy"
                 />
                 Error-prone
               </label>
-              <button onClick={() => removeTask(index)} className="text-slate-400 hover:text-red-500 p-1">
+              <button onClick={() => removeTask(index)} className="text-slate-500 hover:text-kova-red p-1">
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>

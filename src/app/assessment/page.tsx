@@ -32,12 +32,12 @@ export default function AssessmentPage() {
   const StepComponent = stepComponents[state.currentStep];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-kova-navy">
       <div className="mx-auto max-w-4xl px-4 py-8">
         <div className="mb-8">
           <ProgressBar steps={STEPS.map((s) => s.title)} currentStep={state.currentStep} />
         </div>
-        <div className="rounded-2xl bg-white p-6 shadow-sm sm:p-10">
+        <div className="rounded-2xl border border-kova-navy-light bg-kova-navy-mid p-6 shadow-sm sm:p-10">
           {StepComponent && <StepComponent />}
         </div>
       </div>

@@ -3,8 +3,8 @@ import "./globals.css";
 import { DiscoveryProvider } from "@/context/DiscoveryContext";
 
 export const metadata: Metadata = {
-  title: "AI Business Discovery Framework",
-  description: "Discover how AI can optimize your business workflows and maximize outcomes",
+  title: "KOVA · AI Business Discovery",
+  description: "Discover how AI can optimize your business workflows — KOVA Intelligent Automation",
 };
 
 export default function RootLayout({

@@ -26,8 +26,8 @@ export default function StepShell({
   return (
     <div className="mx-auto w-full max-w-2xl">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
-        <p className="mt-1 text-sm text-slate-500">{description}</p>
+        <h2 className="text-2xl font-bold text-white font-display">{title}</h2>
+        <p className="mt-1 text-sm text-slate-400">{description}</p>
       </div>
 
       <div className="space-y-6">{children}</div>

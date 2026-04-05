@@ -23,24 +23,24 @@ export default function CheckboxGroup({ label, options, values, onChange }: Chec
 
   return (
     <fieldset>
-      {label && <legend className="mb-3 text-sm font-medium text-slate-700">{label}</legend>}
+      {label && <legend className="mb-3 text-sm font-medium text-kova-violet-pale">{label}</legend>}
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
         {options.map((option) => (
           <label
             key={option.value}
             className={`flex cursor-pointer items-center rounded-lg border p-3 transition-colors ${
               values.includes(option.value)
-                ? "border-blue-500 bg-blue-50"
-                : "border-slate-200 hover:border-slate-300"
+                ? "border-kova-violet bg-kova-violet/10"
+                : "border-kova-navy-light hover:border-kova-navy-light/80 hover:bg-kova-navy-light/50"
             }`}
           >
             <input
               type="checkbox"
               checked={values.includes(option.value)}
               onChange={() => toggle(option.value)}
-              className="h-4 w-4 rounded text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 rounded border-kova-navy-light text-kova-violet focus:ring-kova-violet bg-kova-navy"
             />
-            <span className="ml-3 text-sm text-slate-700">{option.label}</span>
+            <span className="ml-3 text-sm text-slate-300">{option.label}</span>
           </label>
         ))}
       </div>

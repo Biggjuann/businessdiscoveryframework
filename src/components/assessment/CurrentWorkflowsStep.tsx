@@ -56,20 +56,20 @@ export default function CurrentWorkflowsStep() {
       />
 
       <div>
-        <label className="mb-3 block text-sm font-medium text-slate-700">
+        <label className="mb-3 block text-sm font-medium text-kova-violet-pale">
           Key Business Processes
         </label>
         <div className="space-y-3">
           {form.keyProcesses.map((process, index) => (
-            <div key={index} className="flex gap-2 items-start rounded-lg border border-slate-200 p-3">
+            <div key={index} className="flex gap-2 items-start rounded-lg border border-kova-navy-light bg-kova-navy p-3">
               <input
-                className="flex-1 rounded border border-slate-300 px-2 py-1.5 text-sm"
+                className="flex-1 rounded border border-kova-navy-light bg-kova-navy-mid px-2 py-1.5 text-sm text-white placeholder:text-slate-500"
                 placeholder="Process name"
                 value={process.name}
                 onChange={(e) => updateProcess(index, { name: e.target.value })}
               />
               <select
-                className="rounded border border-slate-300 px-2 py-1.5 text-sm"
+                className="rounded border border-kova-navy-light bg-kova-navy-mid px-2 py-1.5 text-sm text-white"
                 value={process.frequency}
                 onChange={(e) => updateProcess(index, { frequency: e.target.value as Process["frequency"] })}
               >
@@ -78,7 +78,7 @@ export default function CurrentWorkflowsStep() {
                 ))}
               </select>
               <select
-                className="rounded border border-slate-300 px-2 py-1.5 text-sm"
+                className="rounded border border-kova-navy-light bg-kova-navy-mid px-2 py-1.5 text-sm text-white"
                 value={process.manualEffort}
                 onChange={(e) => updateProcess(index, { manualEffort: e.target.value as Process["manualEffort"] })}
               >
@@ -88,7 +88,7 @@ export default function CurrentWorkflowsStep() {
               </select>
               <button
                 onClick={() => removeProcess(index)}
-                className="text-slate-400 hover:text-red-500 p-1"
+                className="text-slate-500 hover:text-kova-red p-1"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

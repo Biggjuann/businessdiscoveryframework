@@ -49,7 +49,7 @@ export default function TechStackStep() {
       />
 
       <div>
-        <label className="mb-3 block text-sm font-medium text-slate-700">
+        <label className="mb-3 block text-sm font-medium text-kova-violet-pale">
           Integration Readiness (1 = Not ready, 5 = Fully ready)
         </label>
         <div className="flex items-center gap-3">
@@ -57,10 +57,10 @@ export default function TechStackStep() {
             <button
               key={n}
               onClick={() => setForm({ ...form, integrationReadiness: n })}
-              className={`h-10 w-10 rounded-lg text-sm font-medium transition-colors ${
+              className={`h-10 w-10 rounded-lg text-sm font-medium font-mono transition-colors ${
                 form.integrationReadiness >= n
-                  ? "bg-blue-600 text-white"
-                  : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                  ? "bg-kova-violet text-white"
+                  : "bg-kova-navy-light text-slate-500 hover:bg-kova-navy-light/80"
               }`}
             >
               {n}
@@ -70,26 +70,26 @@ export default function TechStackStep() {
       </div>
 
       <div>
-        <label className="mb-3 block text-sm font-medium text-slate-700">
+        <label className="mb-3 block text-sm font-medium text-kova-violet-pale">
           Are you currently using any AI or machine learning tools?
         </label>
         <div className="flex gap-3">
           <button
             onClick={() => setForm({ ...form, existingAI: true })}
-            className={`rounded-lg border px-6 py-2 text-sm font-medium transition-colors ${
+            className={`rounded-lg border px-6 py-2 text-sm font-medium font-display transition-colors ${
               form.existingAI
-                ? "border-blue-500 bg-blue-50 text-blue-700"
-                : "border-slate-200 text-slate-600 hover:border-slate-300"
+                ? "border-kova-violet bg-kova-violet/10 text-kova-violet"
+                : "border-kova-navy-light text-slate-400 hover:border-kova-navy-light/80"
             }`}
           >
             Yes
           </button>
           <button
             onClick={() => setForm({ ...form, existingAI: false })}
-            className={`rounded-lg border px-6 py-2 text-sm font-medium transition-colors ${
+            className={`rounded-lg border px-6 py-2 text-sm font-medium font-display transition-colors ${
               !form.existingAI
-                ? "border-blue-500 bg-blue-50 text-blue-700"
-                : "border-slate-200 text-slate-600 hover:border-slate-300"
+                ? "border-kova-violet bg-kova-violet/10 text-kova-violet"
+                : "border-kova-navy-light text-slate-400 hover:border-kova-navy-light/80"
             }`}
           >
             No
