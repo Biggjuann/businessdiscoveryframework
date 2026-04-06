@@ -463,4 +463,131 @@ export const SERVICE_CATALOG: AIService[] = [
     budgetTier: "budget",
     alternativeId: "jasper-ai",
   },
+
+  // ============================================
+  // VOICE AGENTS
+  // ============================================
+
+  // --- Retell AI (mid) → Vapi (budget) ---
+  {
+    id: "retell-ai",
+    name: "Retell AI",
+    vendor: "Retell AI",
+    description: "Voice AI platform for building and deploying conversational phone agents. Handles inbound/outbound calls with natural-sounding voices, call transfers, appointment booking, and CRM integration.",
+    category: "point_solution",
+    websiteHint: "retellai.com",
+    addressesOpportunities: ["voice_agent", "customer_chatbot"],
+    coverageCategories: ["generative_ai"],
+    tiers: [
+      { name: "Pay As You Go", monthlyCost: "$0.07-0.20/min", features: ["Unlimited agents", "Call recording", "Custom voices", "Webhooks"] },
+      { name: "Enterprise", monthlyCost: "Custom pricing", features: ["Dedicated infrastructure", "SLA", "SSO", "Priority support"] },
+    ],
+    implementationTimeWeeks: 1,
+    strengths: ["Best voice quality in the category", "Very fast to prototype (live in hours)", "Built-in call transfer and booking workflows", "Strong developer API for custom integrations"],
+    considerations: ["Per-minute costs can add up at high volume", "Newer platform — smaller community", "Advanced flows require developer resources"],
+    budgetTier: "mid",
+    alternativeId: "vapi-ai",
+  },
+  {
+    id: "vapi-ai",
+    name: "Vapi",
+    vendor: "Vapi",
+    description: "Developer-first voice AI platform for building phone agents. Pay-per-minute pricing with support for custom LLMs, tool calling, and real-time voice conversations.",
+    category: "point_solution",
+    websiteHint: "vapi.ai",
+    addressesOpportunities: ["voice_agent", "customer_chatbot"],
+    coverageCategories: ["generative_ai"],
+    tiers: [
+      { name: "Pay As You Go", monthlyCost: "$0.05-0.15/min", features: ["Unlimited assistants", "Tool calling", "Custom LLM support", "Call recording"] },
+      { name: "Pro", monthlyCost: "$50/mo + usage", features: ["Lower per-minute rates", "Analytics dashboard", "Priority support", "Team management"] },
+    ],
+    implementationTimeWeeks: 1,
+    strengths: ["Cheapest per-minute rates in the market", "Bring your own LLM (OpenAI, Claude, etc.)", "Strong developer community", "Most flexible for custom workflows"],
+    considerations: ["More technical to set up than Retell", "Voice quality slightly behind Retell", "Requires developer to build complex flows", "Dashboard/analytics less polished"],
+    budgetTier: "budget",
+    alternativeId: "retell-ai",
+  },
+  {
+    id: "synthflow",
+    name: "Synthflow",
+    vendor: "Synthflow",
+    description: "No-code AI voice agent builder. Create phone agents for appointment booking, lead qualification, and customer support without any coding — includes phone number provisioning.",
+    category: "point_solution",
+    websiteHint: "synthflow.ai",
+    addressesOpportunities: ["voice_agent", "customer_chatbot", "smart_scheduling"],
+    coverageCategories: ["generative_ai", "automation"],
+    tiers: [
+      { name: "Starter", monthlyCost: "$29/mo", features: ["50 minutes", "1 agent", "Phone number included", "No-code builder"] },
+      { name: "Pro", monthlyCost: "$99/mo", features: ["500 minutes", "Unlimited agents", "CRM integrations", "Call transfers"] },
+      { name: "Agency", monthlyCost: "$449/mo", features: ["5,000 minutes", "White-label", "Sub-accounts", "API access"] },
+    ],
+    implementationTimeWeeks: 1,
+    strengths: ["True no-code — non-technical staff can build agents", "Phone number included in every plan", "Flat monthly pricing (predictable costs)", "Also covers scheduling use case"],
+    considerations: ["Minute limits can be restrictive on lower tiers", "Less customizable than Vapi/Retell", "Voice quality adequate but not best-in-class", "Limited integration depth vs developer platforms"],
+    budgetTier: "budget",
+    alternativeId: "retell-ai",
+  },
+
+  // ============================================
+  // SOCIAL MEDIA COMMENT MANAGEMENT
+  // ============================================
+
+  // --- Sprout Social (premium) → NapoleonCat (mid) → Manychat (budget) ---
+  {
+    id: "sprout-social",
+    name: "Sprout Social",
+    vendor: "Sprout Social",
+    description: "Enterprise social media management platform with AI-powered comment moderation, sentiment analysis, automated responses, and unified inbox across all major platforms including Google Business, Meta, and TikTok.",
+    category: "platform",
+    websiteHint: "sproutsocial.com",
+    addressesOpportunities: ["social_reply_agent", "sentiment_analysis", "content_generation"],
+    coverageCategories: ["generative_ai", "analytics"],
+    tiers: [
+      { name: "Professional", monthlyCost: "$249/seat/mo", features: ["5 social profiles", "AI-assisted replies", "Unified inbox", "Review management", "Sentiment analysis", "TikTok + Meta + Google"] },
+      { name: "Advanced", monthlyCost: "$399/seat/mo", features: ["Unlimited profiles", "Automated rules", "AI content suggestions", "Custom workflows", "Chatbots"] },
+    ],
+    implementationTimeWeeks: 2,
+    strengths: ["Most comprehensive social management platform", "AI generates on-brand reply suggestions", "Covers Google Business reviews + Meta + TikTok in unified inbox", "Enterprise-grade analytics and reporting", "Also handles content generation and sentiment analysis"],
+    considerations: ["$249+/seat is expensive for small teams", "Can be overkill if you only need comment replies", "Complex feature set takes time to learn"],
+    budgetTier: "premium",
+    alternativeId: "napoleoncat",
+  },
+  {
+    id: "napoleoncat",
+    name: "NapoleonCat",
+    vendor: "NapoleonCat",
+    description: "Social media management tool focused on engagement automation. Auto-moderates and replies to comments and reviews across Meta (Facebook/Instagram), Google Business, TikTok, and YouTube with AI-powered rules.",
+    category: "point_solution",
+    websiteHint: "napoleoncat.com",
+    addressesOpportunities: ["social_reply_agent", "sentiment_analysis"],
+    coverageCategories: ["generative_ai", "analytics"],
+    tiers: [
+      { name: "Standard", monthlyCost: "$32/mo", features: ["3 profiles", "Auto-moderation", "Unified inbox", "Google + Meta + TikTok", "Basic analytics"] },
+      { name: "Pro", monthlyCost: "$76/mo", features: ["Unlimited profiles", "AI auto-replies", "Sentiment tagging", "Team workflows", "Reporting"] },
+    ],
+    implementationTimeWeeks: 1,
+    strengths: ["85% cheaper than Sprout Social", "Auto-moderation rules can reply instantly 24/7", "Covers Google Business + Meta + TikTok + YouTube", "Built specifically for comment/review management", "Good sentiment tagging for tracking brand health"],
+    considerations: ["Less powerful analytics than Sprout Social", "AI reply generation less sophisticated", "Smaller brand — less third-party integration ecosystem", "No built-in content creation tools"],
+    budgetTier: "mid",
+    alternativeId: "manychat",
+  },
+  {
+    id: "manychat",
+    name: "ManyChat",
+    vendor: "ManyChat",
+    description: "Chat automation platform that auto-replies to Instagram, Facebook, and TikTok comments and DMs. Triggers automated conversation flows from comment keywords to drive leads, sales, and engagement.",
+    category: "point_solution",
+    websiteHint: "manychat.com",
+    addressesOpportunities: ["social_reply_agent", "customer_chatbot"],
+    coverageCategories: ["generative_ai", "automation"],
+    tiers: [
+      { name: "Free", monthlyCost: "$0/mo", features: ["Instagram + Facebook + TikTok", "Basic automation", "Comment triggers", "Up to 1,000 contacts"] },
+      { name: "Pro", monthlyCost: "$15/mo", features: ["Unlimited contacts", "Advanced flows", "AI text generation", "Keyword triggers", "Analytics", "SMS + Email"] },
+    ],
+    implementationTimeWeeks: 1,
+    strengths: ["Free tier to start immediately", "Best-in-class for Instagram/TikTok comment-to-DM automation", "Drives direct revenue (comment → DM → sale flow)", "Dead simple to set up — no-code", "Also automates DMs which doubles engagement"],
+    considerations: ["No Google Business review management", "Comment replies are rule-based, not fully AI-generated", "Focused on engagement/sales funnels — not review management", "No sentiment analysis or reporting depth", "Instagram/Facebook/TikTok only — no Google, YouTube, or X"],
+    budgetTier: "budget",
+    alternativeId: "napoleoncat",
+  },
 ];
